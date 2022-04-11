@@ -6,7 +6,7 @@ pub struct Bet<M: ManagedTypeApi> {
     pub(crate) address: ManagedAddress<M>,
     pub(crate) amount: BigUint<M>,
     pub(crate) timestamp: u64,
-    pub(crate) temperature: f32,
-    pub(crate) humidity: f32,
+    pub(crate) temperature: u64,
+    pub(crate) humidity: u64,
     pub(crate) uv_level: u16,
 }

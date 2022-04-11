@@ -9,7 +9,7 @@
 			"type": "deploy",
 			"options": {
 				"path": "../../",
-				"gas_limit": 6000000,
+				"gas_limit": 600000000,
 				"arguments": "0x1"
 			}
 		}
