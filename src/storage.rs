@@ -1,8 +1,7 @@
 elrond_wasm::imports!();
 elrond_wasm::derive_imports!();
 
-mod bet;
-pub use bet::Bet;
+use crate::bet::Bet;
 
 #[elrond_wasm::module]
 pub trait Storage {

@@ -7,7 +7,9 @@
 elrond_wasm_node::wasm_endpoints! {
     bet
     (
+        fund
         getBets
+        placeBet
     )
 }
 
