@@ -7,9 +7,7 @@
 elrond_wasm_node::wasm_endpoints! {
     bet
     (
-        add
         getBets
-        getSum
     )
 }
 
