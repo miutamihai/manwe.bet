@@ -2,8 +2,10 @@
 
 elrond_wasm::imports!();
 
+mod storage;
+
 #[elrond_wasm::derive::contract]
-pub trait Adder {
+pub trait BetContract: crate::storage::Storage {
     #[view(getSum)]
     #[storage_mapper("sum")]
     fn sum(&self) -> SingleValueMapper<BigUint>;
