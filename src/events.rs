@@ -14,4 +14,16 @@ pub trait Events {
         #[indexed] humidity: u64,
         #[indexed] uv_level: u16,
     );
+
+    #[event("bet_won")]
+    fn bet_won(
+        &self,
+        #[indexed] id: usize,
+    )
+
+    #[event("bet_cancelled")]
+    fn bet_cancelled(
+        &self,
+        #[indexed] id: usize,
+    );
 }

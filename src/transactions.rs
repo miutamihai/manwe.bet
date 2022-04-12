@@ -37,6 +37,15 @@ pub trait Transactions: crate::events::Events + crate::storage::Storage {
     fn win_bet(&self, id: usize) {
         let bet = self.bets().get(id);
 
+        self.bet_won(id);
         self.send().direct_egld(&bet.address, &bet.amount, &[]);
+        self.bets().clear_entry(id);
+    }
+
+    #[only_owner]
+    #[endpoint(cancelBet)]
+    fn cancel_bet(&self, id: usize) {
+        self.bet_cancelled(id);
+        self.bets().clear_entry(id);
     }
 }

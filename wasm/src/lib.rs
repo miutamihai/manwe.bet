@@ -7,6 +7,7 @@
 elrond_wasm_node::wasm_endpoints! {
     bet
     (
+        cancelBet
         fund
         getBets
         placeBet
