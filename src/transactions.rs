@@ -29,6 +29,6 @@ pub trait Transactions: crate::events::Events + crate::storage::Storage {
         };
 
         self.bets().push(&bet);
-        self.bet_event(bet);
+        self.bet_event(self.bets().len(), bet.address, bet.amount, bet.timestamp, bet.temperature, bet.humidity, bet.uv_level);
     }
 }

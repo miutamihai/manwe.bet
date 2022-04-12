@@ -1,0 +1,31 @@
+{
+    "config": {
+        "pem": "../testnet.pem",
+        "proxy": "https://testnet-api.elrond.com",
+        "chain": "T"
+    },
+    "steps": [
+        {
+            "type": "deploy",
+            "options": {
+                "path": "../../",
+                "gas_limit": 600000000,
+                "delay": 5000
+            }
+        },
+        {
+            "type": "transaction",
+            "options": {
+                "arguments": [ "0x",
+                    "000000006255de17",
+                    "0000000000000010",
+                    "0000000000000010",
+                    "0010"
+                ],
+                "value": 2000000000000000000,
+                "gas_limit": 600000000,
+                "function": "placeBet"
+            }
+        }
+    ]
+}
