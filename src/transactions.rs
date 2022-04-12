@@ -31,4 +31,12 @@ pub trait Transactions: crate::events::Events + crate::storage::Storage {
         self.bets().push(&bet);
         self.bet_event(self.bets().len(), bet.address, bet.amount, bet.timestamp, bet.temperature, bet.humidity, bet.uv_level);
     }
+
+    #[only_owner]
+    #[endpoint(winBet)]
+    fn win_bet(&self, id: usize) {
+        let bet = self.bets().get(id);
+
+        self.send().direct_egld(&bet.address, &bet.amount, &[]);
+    }
 }
